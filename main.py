@@ -14,6 +14,7 @@ y_player = 180
 
 player_speed = 7
 
+
 def moving(event):
     global x_player
     global y_player
@@ -33,6 +34,8 @@ def moving(event):
     elif event.keysym == 'd':
         x_player = x_player + player_speed
         player.place(x=x_player)
+
+
 
 
 apple_img = PhotoImage(file=r"apple.png")
