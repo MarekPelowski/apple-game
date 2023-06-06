@@ -17,7 +17,20 @@ player_speed = 7
 def moving(event):
     global x_player
     global y_player
-    if event.keysym == 'd':
+
+    if event.keysym == 'w':
+        y_player = y_player - player_speed
+        player.place(y=y_player)
+
+    elif event.keysym == 'a':
+        x_player = x_player - player_speed
+        player.place(x=x_player)
+
+    elif event.keysym == 's':
+        y_player = y_player + player_speed
+        player.place(y=y_player)
+
+    elif event.keysym == 'd':
         x_player = x_player + player_speed
         player.place(x=x_player)
 
