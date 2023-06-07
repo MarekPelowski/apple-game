@@ -39,7 +39,7 @@ def moving(event):
 
 
 apple_img = PhotoImage(file=r"apple.png")
-player_img = PhotoImage(file=r"player.png")
+player_img = PhotoImage(file=r"player_right.png")
 
 apple = Label(root, image=apple_img, borderwidth=0, bg="black")
 apple.place(x=x_apple, y=y_apple)
