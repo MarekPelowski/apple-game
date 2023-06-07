@@ -15,6 +15,7 @@ y_player = 180
 player_speed = 7
 
 
+
 def moving(event):
     global x_player
     global y_player
