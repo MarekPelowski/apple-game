@@ -1,5 +1,7 @@
 from tkinter import *
 from random import randrange
+import os
+import sys
 
 root = Tk()
 root.geometry("1000x500")
@@ -31,6 +33,29 @@ player_left_img = PhotoImage(file=r"player_left.png")
 player_up_img = PhotoImage(file=r"player_up.png")
 player_down_img = PhotoImage(file=r"player_down.png")
 
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+
+def try_again():
+
+
+    your_score1 = Label(root, text="Your score is: ", font=("Arial", 40, "bold"), bg="white", fg="black")
+    your_score1.place(x=30, y=30)
+
+    your_score2 = Label(root, text=score_number, font=("Arial", 40, "bold"), bg="white", fg="black")
+    your_score2.place(x=420, y=30)
+
+    try_again_button = Button(root, text="Try Again?", fg="black", font=("Arial", 25, "bold"), borderwidth=0, command=restart_program)
+    try_again_button.place(x=30, y=150)
+
+def destroy_all_widgets():
+    player.destroy()
+    apple.destroy()
+    countdown1_label.destroy()
+    countdown2_label.destroy()
+    score1_label.destroy()
+    score2_label.destroy()
 
 
 def tksleep(t):
@@ -49,7 +74,8 @@ def countdown():
         tksleep(1)
         countdown_number = countdown_number - 1
         countdown_var.set(countdown_number)
-
+    destroy_all_widgets()
+    try_again()
 
 
 
