@@ -53,9 +53,18 @@ def moving(event):
         hitting_apple()
 
 def hitting_apple():
-    if x_player == x_apple - 50 and y_player >= y_apple and y_player <= y_apple - 80:
 
+# from the left
+
+    if x_player == (x_apple - 40) and y_player >= y_apple and y_player < (y_apple + 40):
         apple.destroy()
+    elif x_player == (x_apple - 40) and y_player <= y_apple and y_player > (y_apple - 85):
+        apple.destroy()
+
+# from the bottom
+
+
+
 
 
 
