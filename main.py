@@ -64,6 +64,9 @@ def hitting_apple():
 
 # from the bottom
 
+    elif x_player >= x_apple and x_player <= (x_apple + 40) and y_player == y_apple + 40:
+        apple.destroy()
+
 
 
 
