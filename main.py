@@ -31,6 +31,8 @@ player_left_img = PhotoImage(file=r"player_left.png")
 player_up_img = PhotoImage(file=r"player_up.png")
 player_down_img = PhotoImage(file=r"player_down.png")
 
+
+
 def tksleep(t):
     ms = int(t+1000)
     var = IntVar(root)
@@ -43,8 +45,12 @@ def tksleep(t):
 def countdown():
     global countdown_number
 
-    tksleep(1)
-    countdown_number = countdown_number - 1
+    for x in range(60):
+        tksleep(1)
+        countdown_number = countdown_number - 1
+        countdown_var.set(countdown_number)
+
+
 
 
 
@@ -186,7 +192,7 @@ countdown1_label = Label(root, text="Timer: ", font=("Arial", 20, "bold"), bg="w
 countdown1_label.place(x=20, y=80)
 
 countdown2_label = Label(root, textvariable=countdown_var, font=("Arial", 20, "bold"), bg="white", fg="black")
-countdown2_label.place(x=110, y=80)
+countdown2_label.place(x=120, y=80)
 
 
 root.bind("<Key>", moving)
