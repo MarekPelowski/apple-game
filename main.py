@@ -54,6 +54,7 @@ def moving(event):
 
 def hitting_apple():
 
+
 # from the left
 
     if x_player == (x_apple - 40) and y_player >= y_apple and y_player < (y_apple + 40):
