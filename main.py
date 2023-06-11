@@ -26,6 +26,17 @@ player_left_img = PhotoImage(file=r"player_left.png")
 player_up_img = PhotoImage(file=r"player_up.png")
 player_down_img = PhotoImage(file=r"player_down.png")
 
+def tksleep(t):
+    ms = int(t+1000)
+    var = IntVar(root)
+    root.after(ms, var.set, 1)
+    root.wait_variable(var)
+    '''
+    from the internet
+    '''
+
+
+
 def hitting_border():
     global y_player, x_player
 
