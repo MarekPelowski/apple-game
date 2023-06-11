@@ -22,6 +22,18 @@ player_left_img = PhotoImage(file=r"player_left.png")
 player_up_img = PhotoImage(file=r"player_up.png")
 player_down_img = PhotoImage(file=r"player_down.png")
 
+
+def make_apple():
+    global x_apple
+    global y_apple
+    global apple
+
+    x_apple = randrange(0, 920, 5)
+    y_apple = randrange(0, 420, 5)
+
+    apple = Label(root, image=apple_img, borderwidth=0, bg="black")
+    apple.place(x=x_apple, y=y_apple)
+
 def moving(event):
     global x_player
     global y_player
@@ -59,29 +71,44 @@ def hitting_apple():
 
     if x_player == (x_apple - 40) and y_player >= y_apple and y_player < (y_apple + 40):
         apple.destroy()
+        make_apple()
     elif x_player == (x_apple - 40) and y_player <= y_apple and y_player > (y_apple - 85):
         apple.destroy()
+        make_apple()
+
 
 # from the bottom
 
     elif x_player >= x_apple and x_player <= (x_apple + 40) and y_player == (y_apple + 40):
         apple.destroy()
+        make_apple()
     elif x_player <= x_apple and x_player >= (x_apple - 40) and y_player == (y_apple + 40):
         apple.destroy()
+        make_apple()
+
 
 # from the top
 
     elif x_player >= x_apple and x_player <= (x_apple + 40) and y_player == (y_apple - 80):
         apple.destroy()
+        make_apple()
+
     elif x_player <= x_apple and x_player >= (x_apple - 40) and y_player == (y_apple - 80):
         apple.destroy()
+        make_apple()
+
+
 
 # from the right
 
     if x_player == (x_apple + 40) and y_player >= y_apple and y_player < (y_apple + 40):
         apple.destroy()
+        make_apple()
+
     elif x_player == (x_apple + 40) and y_player <= y_apple and y_player > (y_apple - 85):
         apple.destroy()
+        make_apple()
+
 
 
 
