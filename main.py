@@ -8,9 +8,14 @@ root.resizable(False, False)
 root.title("Apple Game")
 
 score_number = 0
+countdown_number = 60
 
 score = IntVar()
 score.set(score_number)
+
+countdown_var = IntVar()
+countdown_var.set(countdown_number)
+
 
 x_apple = randrange(0, 920, 5)
 y_apple = randrange(0, 420, 5)
@@ -34,6 +39,12 @@ def tksleep(t):
     '''
     from the internet
     '''
+
+def countdown():
+    global countdown_number
+
+    tksleep(1)
+    countdown_number = countdown_number - 1
 
 
 
@@ -163,13 +174,25 @@ apple.place(x=x_apple, y=y_apple)
 player = Label(root, image=player_right_img, borderwidth=0, bg="black")
 player.place(x=x_player, y=y_player)
 
+
 score1_label = Label(root, text="score: ", font=("Arial", 20, "bold"), bg="white", fg="black")
 score1_label.place(x=20, y=20)
 
 score2_label = Label(root, textvariable=score, font=("Arial", 20, "bold"), bg="white", fg="black")
 score2_label.place(x=110, y=20)
 
+
+countdown1_label = Label(root, text="Timer: ", font=("Arial", 20, "bold"), bg="white", fg="black")
+countdown1_label.place(x=20, y=80)
+
+countdown2_label = Label(root, textvariable=countdown_var, font=("Arial", 20, "bold"), bg="white", fg="black")
+countdown2_label.place(x=110, y=80)
+
+
 root.bind("<Key>", moving)
+
+
+countdown()
 
 hitting_apple()
 
