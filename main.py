@@ -189,11 +189,13 @@ def hitting_apple():
     if x_player == (x_apple + 40) and y_player >= y_apple and y_player < (y_apple + 40):
         apple.destroy()
         make_apple()
+        score_number = score_number + 1 # Added update score_number
         score.set(score_number + 1)
 
     elif x_player == (x_apple + 40) and y_player <= y_apple and y_player > (y_apple - 85):
         apple.destroy()
         make_apple()
+        score_number = score_number + 1 # Added update score_number
         score.set(score_number + 1)
 
 
@@ -228,4 +230,4 @@ countdown()
 
 hitting_apple()
 
-root.mainloop()
+root.mainloop(
