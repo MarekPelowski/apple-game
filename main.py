@@ -230,4 +230,4 @@ countdown()
 
 hitting_apple()
 
-root.mainloop(
+root.mainloop()
